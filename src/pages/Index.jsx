@@ -1,17 +1,17 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, Text, VStack, Input, IconButton, Box, Heading } from "@chakra-ui/react";
+import { FaSearch, FaMicrophone } from "react-icons/fa";
 
 const Index = () => {
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+        <Heading as="h1" size="2xl">Slang Term App</Heading>
+        <Text fontSize="xl">Discover the latest trending slang terms</Text>
+        <Box display="flex" alignItems="center" width="100%">
+          <Input placeholder="Search for slang terms..." />
+          <IconButton aria-label="Search" icon={<FaSearch />} />
+          <IconButton aria-label="Voice Search" icon={<FaMicrophone />} />
+        </Box>
       </VStack>
     </Container>
   );
