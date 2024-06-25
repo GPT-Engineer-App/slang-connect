@@ -76,7 +76,7 @@ const Index = () => {
             </Badge>
           ))}
         </HStack>
-        <Box width="100%" mt={4} p={4} bg="brand.700" borderRadius="md" boxShadow="lg">
+        <Box width="100%" mt={4} p={4} bg="brand.700" borderRadius="md" boxShadow="lg" maxHeight="300px" overflowY="auto">
           <List spacing={3} width="100%">
             {definitions.map((definition, index) => (
               <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="brand.600" boxShadow="lg" border="1px solid" borderColor="gray.200" as={motion.div} whileHover={{ scale: 1.02 }}>
