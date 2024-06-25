@@ -16,6 +16,11 @@ const colors = {
     secondary: "#4B7BEC", // Electric Blue
     accent: "#D9DCD6", // Soft Gray
   },
+  neon: {
+    cyan: "#00FFFF",
+    magenta: "#FF00FF",
+    yellow: "#FFFF00",
+  },
 };
 
 const theme = extendTheme({
@@ -23,13 +28,13 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "brand.900",
+        bg: "black",
         color: "brand.600",
       },
       a: {
-        color: "dynamic.primary",
+        color: "neon.cyan",
         _hover: {
-          color: "dynamic.secondary",
+          color: "neon.magenta",
         },
       },
     },
