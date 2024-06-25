@@ -3,6 +3,8 @@ import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListIte
 import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
+import baguetteBox from 'baguettebox.js';
+import 'baguettebox.js/dist/baguetteBox.min.css';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,6 +21,11 @@ const Index = () => {
     // Mock API call to fetch trending keywords
     setTrendingKeywords(["AI", "Quantum", "Neon", "Future"]);
   }, []);
+
+  useEffect(() => {
+    // Initialize baguetteBox for the gallery
+    baguetteBox.run('.gallery');
+  }, [definitions]);
 
   const handleSearch = async () => {
     setLoading(true);
@@ -82,6 +89,11 @@ const Index = () => {
                 <Text fontWeight="bold">{definition.word}</Text>
                 <Text>{definition.definition}</Text>
                 <Text fontStyle="italic" color="gray.500">{definition.example}</Text>
+                <Box className="gallery">
+                  <a href={`https://source.unsplash.com/random/800x600?${definition.word}`} data-caption={definition.word}>
+                    <img src={`https://source.unsplash.com/random/200x150?${definition.word}`} alt={definition.word} />
+                  </a>
+                </Box>
               </ListItem>
             ))}
           </List>
