@@ -32,7 +32,11 @@ const Index = () => {
     setError(null);
     try {
       const response = await axios.get(`https://api.urbandictionary.com/v0/define?term=${searchTerm}`);
-      setDefinitions(response.data.list);
+      const definitionsWithImages = response.data.list.map(def => ({
+        ...def,
+        image_url: `https://source.unsplash.com/random/200x150?${def.word}`
+      }));
+      setDefinitions(definitionsWithImages);
       setRecentSearches((prevSearches) => [searchTerm, ...prevSearches.slice(0, 4)]);
     } catch (err) {
       setError("Failed to fetch definitions. Please try again.");
@@ -89,7 +93,9 @@ const Index = () => {
                 <Text fontWeight="bold">{definition.word}</Text>
                 <Text>{definition.definition}</Text>
                 <Text fontStyle="italic" color="gray.500">{definition.example}</Text>
-                <Image src={`https://source.unsplash.com/random/200x150?${definition.word}`} alt={definition.word} borderRadius="md" mt={2} />
+                {definition.image_url && (
+                  <Image src={definition.image_url} alt={definition.word} borderRadius="md" mt={2} />
+                )}
               </ListItem>
             ))}
           </List>
