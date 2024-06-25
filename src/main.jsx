@@ -9,9 +9,24 @@ const colors = {
     800: "#153e75",
     700: "#2a69ac",
   },
+  dynamic: {
+    primary: "#00FF00",
+    secondary: "#FF00FF",
+    accent: "#00FFFF",
+  },
 };
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({
+  colors,
+  styles: {
+    global: {
+      body: {
+        bg: "gray.900",
+        color: "white",
+      },
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
