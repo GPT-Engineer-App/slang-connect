@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Image } from "@chakra-ui/react";
-import backgroundImage from "../../public/images/background.jpg";
+import backgroundImage from "../../public/images/new-background.jpg"; // Updated background image import
 import { FaSearch, FaMicrophone, FaTrophy } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
