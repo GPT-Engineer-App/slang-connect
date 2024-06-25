@@ -20,7 +20,7 @@ const Index = () => {
 
   useEffect(() => {
     // Mock API call to fetch trending keywords
-    setTrendingKeywords(["AI", "Quantum", "Neon", "Future"]);
+    setTrendingKeywords(["Lit", "Flex", "Bet", "Cap", "Slay", "Vibe", "Fam", "GOAT"]);
   }, []);
 
   useEffect(() => {
@@ -112,8 +112,6 @@ const Index = () => {
           </HStack>
         </Box>
         <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={() => setIsModalOpen(true)}>Submit New Word</Button>
-        <Button colorScheme="teal" mt={4} onClick={() => handleKeywordClick('Parents')}>Parents</Button>
-        <Button colorScheme="teal" mt={4} onClick={() => handleKeywordClick('Common')}>Common</Button>
         <Box mt={8} p={4} bg="gray.800" borderRadius="md" boxShadow="lg" width="100%">
           <Heading as="h3" size="lg" color="teal.300" mb={4}>Embed This Tool</Heading>
           <Code p={4} bg="gray.700" borderRadius="md" width="100%" whiteSpace="pre-wrap">
