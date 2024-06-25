@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
+import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea, Image } from "@chakra-ui/react";
 import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -89,11 +89,7 @@ const Index = () => {
                 <Text fontWeight="bold">{definition.word}</Text>
                 <Text>{definition.definition}</Text>
                 <Text fontStyle="italic" color="gray.500">{definition.example}</Text>
-                <Box className="gallery">
-                  <a href={`https://source.unsplash.com/random/800x600?${definition.word}`} data-caption={definition.word}>
-                    <img src={`https://source.unsplash.com/random/200x150?${definition.word}`} alt={definition.word} />
-                  </a>
-                </Box>
+                <Image src={`https://source.unsplash.com/random/200x150?${definition.word}`} alt={definition.word} borderRadius="md" mt={2} />
               </ListItem>
             ))}
           </List>
