@@ -5,6 +5,7 @@ import Contact from "./pages/Contact.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Terms from "./pages/Terms.jsx";
 import { Box } from "@chakra-ui/react";
+import GeneralSlang from "./pages/GeneralSlang.jsx";
 import AlphabeticalTerms from "./pages/AlphabeticalTerms.jsx";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/terms" element={<Terms />} />
         <Route exact path="/alphabetical-terms" element={<AlphabeticalTerms />} />
+        <Route exact path="/general-slang" element={<GeneralSlang />} />
         </Routes>
       </Router>
     </Box>
