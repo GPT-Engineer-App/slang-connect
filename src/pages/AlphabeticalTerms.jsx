@@ -19,7 +19,7 @@ const AlphabeticalTerms = () => {
     setLoading(true);
     try {
       const response = await axios.get(`https://slang.net/list/${letter.toLowerCase()}`);
-      setTerms(response.data.terms);
+      setTerms(response.data);
     } catch (error) {
       console.error("Error fetching terms:", error);
     } finally {
