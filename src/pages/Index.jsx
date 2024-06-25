@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea, Image } from "@chakra-ui/react";
-import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
+import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea, Image, Code, useClipboard } from "@chakra-ui/react";
+import { FaSearch, FaMicrophone, FaTrophy, FaPlus, FaCopy } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
 import baguetteBox from 'baguettebox.js';
@@ -16,6 +16,7 @@ const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newWord, setNewWord] = useState("");
   const [newDefinition, setNewDefinition] = useState("");
+  const { hasCopied, onCopy } = useClipboard('<iframe src="https://yourwebsite.com/embed" width="600" height="400"></iframe>');
 
   useEffect(() => {
     // Mock API call to fetch trending keywords
@@ -113,6 +114,15 @@ const Index = () => {
         <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={() => setIsModalOpen(true)}>Submit New Word</Button>
         <Button colorScheme="teal" mt={4} onClick={() => handleKeywordClick('Parents')}>Parents</Button>
         <Button colorScheme="teal" mt={4} onClick={() => handleKeywordClick('Common')}>Common</Button>
+        <Box mt={8} p={4} bg="gray.800" borderRadius="md" boxShadow="lg" width="100%">
+          <Heading as="h3" size="lg" color="teal.300" mb={4}>Embed This Tool</Heading>
+          <Code p={4} bg="gray.700" borderRadius="md" width="100%" whiteSpace="pre-wrap">
+            &lt;iframe src="https://yourwebsite.com/embed" width="600" height="400"&gt;&lt;/iframe&gt;
+          </Code>
+          <Button leftIcon={<FaCopy />} colorScheme="teal" mt={2} onClick={onCopy}>
+            {hasCopied ? "Copied" : "Copy Code"}
+          </Button>
+        </Box>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalOverlay />
           <ModalContent>
