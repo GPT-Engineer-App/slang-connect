@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Image } from "@chakra-ui/react";
-import backgroundImage from "../../public/images/new-background.jpg"; // Updated background image import
+import newBackgroundImage from "../../public/images/subtle-classy-background.jpg"; // Updated background image import
 import { FaSearch, FaMicrophone, FaTrophy } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -30,8 +30,13 @@ const Index = () => {
     }
   };
 
+  const handleKeywordClick = (keyword) => {
+    setSearchTerm(keyword);
+    handleSearch();
+  };
+
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bgImage={`url(${backgroundImage})`} bgSize="cover" bgPosition="center">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bgImage={`url(${newBackgroundImage})`} bgSize="cover" bgPosition="center">
       <VStack spacing={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
         <Heading as="h1" size="2xl" color="white">Slang Term App</Heading>
         <Text fontSize="xl" color="white">Discover the latest trending slang terms</Text>
@@ -54,7 +59,7 @@ const Index = () => {
         {error && <Text color="red.500">{error}</Text>}
         <HStack spacing={2} wrap="wrap" justify="center">
           {trendingKeywords.map((keyword, index) => (
-            <Badge key={index} colorScheme="teal" p={2} borderRadius="md" as={motion.div} whileHover={{ scale: 1.1 }}>
+            <Badge key={index} colorScheme="teal" p={2} borderRadius="md" as={motion.div} whileHover={{ scale: 1.1 }} onClick={() => handleKeywordClick(keyword)}>
               {keyword}
             </Badge>
           ))}
