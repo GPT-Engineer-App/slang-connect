@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
-import backgroundImage from "../../public/images/background.jpg"; // Updated background image import
+import backgroundImage from "../../public/images/new-background.jpg"; // Updated background image import
 import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -18,7 +18,7 @@ const Index = () => {
 
   useEffect(() => {
     // Mock API call to fetch trending keywords
-    setTrendingKeywords(["YOLO", "FOMO", "Lit", "Bae"]);
+    setTrendingKeywords(["AI", "Quantum", "Neon", "Future"]);
   }, []);
 
   const handleSearch = async () => {
@@ -47,39 +47,39 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bgImage={`url(${backgroundImage})`} bgSize="cover" bgPosition="center">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bgImage={`url(${backgroundImage})`} bgSize="cover" bgPosition="center" bgColor="rgba(0, 0, 0, 0.8)">
       <VStack spacing={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-        <Heading as="h1" size="2xl" color="brand.600">Slang Term App</Heading>
-        <Text fontSize="xl" color="brand.600">Discover the latest trending slang terms</Text>
+        <Heading as="h1" size="2xl" color="teal.300">Slang Term App</Heading>
+        <Text fontSize="xl" color="teal.300">Discover the latest trending slang terms</Text>
         <Box display="flex" alignItems="center" width="100%">
           <Input
             placeholder="Search for slang terms..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            bg="brand.600"
+            bg="gray.700"
             borderRadius="md"
             boxShadow="lg"
             _hover={{ boxShadow: "xl" }}
             as={motion.input}
             whileFocus={{ scale: 1.05 }}
-            color="black"
+            color="white"
           />
-          <IconButton aria-label="Search" icon={<FaSearch />} onClick={handleSearch} colorScheme="dynamic.primary" as={motion.button} whileHover={{ scale: 1.1 }} />
-          <IconButton aria-label="Voice Search" icon={<FaMicrophone />} colorScheme="dynamic.primary" as={motion.button} whileHover={{ scale: 1.1 }} />
+          <IconButton aria-label="Search" icon={<FaSearch />} onClick={handleSearch} colorScheme="teal" as={motion.button} whileHover={{ scale: 1.1 }} />
+          <IconButton aria-label="Voice Search" icon={<FaMicrophone />} colorScheme="teal" as={motion.button} whileHover={{ scale: 1.1 }} />
         </Box>
         {loading && <Spinner />}
         {error && <Text color="red.500">{error}</Text>}
         <HStack spacing={2} wrap="wrap" justify="center">
           {trendingKeywords.map((keyword, index) => (
-            <Badge key={index} colorScheme="dynamic.primary" p={2} borderRadius="md" as={motion.div} whileHover={{ scale: 1.1 }} onClick={() => handleKeywordClick(keyword)}>
+            <Badge key={index} colorScheme="teal" p={2} borderRadius="md" as={motion.div} whileHover={{ scale: 1.1 }} onClick={() => handleKeywordClick(keyword)}>
               {keyword}
             </Badge>
           ))}
         </HStack>
-        <Box width="100%" mt={4} p={4} bg="black" color="white" borderRadius="md" boxShadow="lg" maxHeight="300px" overflowY="auto">
+        <Box width="100%" mt={4} p={4} bg="gray.800" color="white" borderRadius="md" boxShadow="lg" maxHeight="300px" overflowY="auto">
           <List spacing={3} width="100%">
             {definitions.map((definition, index) => (
-              <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="black" color="white" boxShadow="lg" border="1px solid" borderColor="gray.200" as={motion.div} whileHover={{ scale: 1.02 }}>
+              <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="gray.800" color="white" boxShadow="lg" border="1px solid" borderColor="gray.600" as={motion.div} whileHover={{ scale: 1.02 }}>
                 <Text fontWeight="bold">{definition.word}</Text>
                 <Text>{definition.definition}</Text>
                 <Text fontStyle="italic" color="gray.500">{definition.example}</Text>
@@ -88,16 +88,16 @@ const Index = () => {
           </List>
         </Box>
         <Box mt={4} width="100%">
-          <Heading as="h3" size="lg" color="brand.600" mb={2}>Recent Searches</Heading>
+          <Heading as="h3" size="lg" color="teal.300" mb={2}>Recent Searches</Heading>
           <HStack spacing={2} wrap="wrap" justify="center">
             {recentSearches.map((term, index) => (
-              <Badge key={index} colorScheme="dynamic.primary" p={2} borderRadius="md" as={motion.div} whileHover={{ scale: 1.1 }} onClick={() => handleKeywordClick(term)}>
+              <Badge key={index} colorScheme="teal" p={2} borderRadius="md" as={motion.div} whileHover={{ scale: 1.1 }} onClick={() => handleKeywordClick(term)}>
                 {term}
               </Badge>
             ))}
           </HStack>
         </Box>
-        <Button leftIcon={<FaPlus />} colorScheme="dynamic.primary" onClick={() => setIsModalOpen(true)}>Submit New Word</Button>
+        <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={() => setIsModalOpen(true)}>Submit New Word</Button>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalOverlay />
           <ModalContent>
@@ -114,7 +114,7 @@ const Index = () => {
               </FormControl>
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={handleNewWordSubmit}>Submit</Button>
+              <Button colorScheme="teal" mr={3} onClick={handleNewWordSubmit}>Submit</Button>
               <Button variant="ghost" onClick={() => setIsModalOpen(false)}>Cancel</Button>
             </ModalFooter>
           </ModalContent>
