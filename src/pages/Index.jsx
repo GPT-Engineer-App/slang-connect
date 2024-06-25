@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
-import backgroundImage from "../../public/images/new-background.jpg"; // Updated background image import
 import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -47,7 +46,7 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bgImage={`url(${backgroundImage})`} bgSize="cover" bgPosition="center" bgColor="rgba(0, 0, 0, 0.8)">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="black">
       <VStack spacing={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
         <Heading as="h1" size="2xl" color="teal.300">Slang Term App</Heading>
         <Text fontSize="xl" color="teal.300">Discover the latest trending slang terms</Text>
@@ -98,6 +97,8 @@ const Index = () => {
           </HStack>
         </Box>
         <Button leftIcon={<FaPlus />} colorScheme="teal" onClick={() => setIsModalOpen(true)}>Submit New Word</Button>
+        <Button colorScheme="teal" mt={4} onClick={() => handleKeywordClick('Parents')}>Parents</Button>
+        <Button colorScheme="teal" mt={4} onClick={() => handleKeywordClick('Common')}>Common</Button>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalOverlay />
           <ModalContent>
