@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Image, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
+import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
 import newBackgroundImage from "../../public/images/subtle-classy-background.jpg"; // Updated background image import
 import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
 import axios from "axios";
@@ -76,19 +76,17 @@ const Index = () => {
             </Badge>
           ))}
         </HStack>
-        <List spacing={3} width="100%">
-          {definitions.map((definition, index) => (
-            <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="brand.600" boxShadow="lg" border="1px solid" borderColor="gray.200" as={motion.div} whileHover={{ scale: 1.02 }}>
-              <Text fontWeight="bold">{definition.word}</Text>
-              <Text>{definition.definition}</Text>
-              <Text fontStyle="italic" color="gray.500">{definition.example}</Text>
-            </ListItem>
-          ))}
-        </List>
-        <HStack spacing={4} mt={4}>
-          <FaTrophy size="24px" color="gold" />
-          <Text color="white">Earn badges for discovering new slang terms!</Text>
-        </HStack>
+        <Box width="100%" mt={4} p={4} bg="brand.700" borderRadius="md" boxShadow="lg">
+          <List spacing={3} width="100%">
+            {definitions.map((definition, index) => (
+              <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" width="100%" bg="brand.600" boxShadow="lg" border="1px solid" borderColor="gray.200" as={motion.div} whileHover={{ scale: 1.02 }}>
+                <Text fontWeight="bold">{definition.word}</Text>
+                <Text>{definition.definition}</Text>
+                <Text fontStyle="italic" color="gray.500">{definition.example}</Text>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
         <Box mt={4} width="100%">
           <Heading as="h3" size="lg" color="brand.600" mb={2}>Recent Searches</Heading>
           <HStack spacing={2} wrap="wrap" justify="center">
