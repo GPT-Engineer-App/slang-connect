@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link as={NavLink} to="/about" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>About</Link>
         <Link as={NavLink} to="/contact" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Contact</Link>
         <Link as={NavLink} to="/terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Terms</Link>
-        <Link as={NavLink} to="/common-terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Common Terms</Link>
+        <Link as={NavLink} to="/alphabetical-terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Alphabetical Terms</Link>
       </Flex>
     </Box>
   );
