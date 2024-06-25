@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Text, VStack, Input, IconButton, Box, Heading, List, ListItem, Spinner, Badge, HStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
-import newBackgroundImage from "../../public/images/subtle-classy-background.jpg"; // Updated background image import
+import backgroundImage from "../../public/images/background.jpg"; // Updated background image import
 import { FaSearch, FaMicrophone, FaTrophy, FaPlus } from "react-icons/fa";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -47,7 +47,7 @@ const Index = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bg="brand.900" bgSize="cover" bgPosition="center">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" bgImage={`url(${backgroundImage})`} bgSize="cover" bgPosition="center">
       <VStack spacing={4} as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
         <Heading as="h1" size="2xl" color="brand.600">Slang Term App</Heading>
         <Text fontSize="xl" color="brand.600">Discover the latest trending slang terms</Text>
