@@ -11,6 +11,7 @@ const Navbar = () => {
         <Link as={NavLink} to="/contact" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Contact</Link>
         <Link as={NavLink} to="/terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Terms</Link>
         <Link as={NavLink} to="/alphabetical-terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Alphabetical Terms</Link>
+        <Link as={NavLink} to="/general-slang" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>General Slang</Link>
       </Flex>
     </Box>
   );
