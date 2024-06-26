@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link as={NavLink} to="/" color="brand.600" fontWeight="bold" whileHover={{ scale: 1.1 }}>Home</Link>
         <Menu>
           <MenuButton as={IconButton} icon={<FaBars />} variant="outline" color="cyan.400" />
-          <MenuList>
+          <MenuList bg="brand.700">
             <MenuItem as={NavLink} to="/about" color="brand.600">About</MenuItem>
             <MenuItem as={NavLink} to="/contact" color="brand.600">Contact</MenuItem>
             <MenuItem as={NavLink} to="/terms" color="brand.600">Terms</MenuItem>
