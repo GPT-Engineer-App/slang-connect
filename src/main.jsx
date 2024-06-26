@@ -28,7 +28,8 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "brand.900",
+        bgImage: "url('/images/solid-background.jpg')",
+        bgSize: "cover",
         color: "brand.600",
       },
       a: {
