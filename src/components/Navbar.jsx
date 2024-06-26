@@ -2,8 +2,6 @@ import { Box, Flex, Link, Menu, MenuButton, MenuList, MenuItem, IconButton } fro
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
