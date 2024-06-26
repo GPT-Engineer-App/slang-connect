@@ -29,9 +29,9 @@ const GeneralSlang = () => {
   }, []);
 
   return (
-    <Box p={4} bg="black" color="white">
-      <Heading as="h2" size="xl" mb={4} color="neon.cyan">General Slang</Heading>
-      <Text fontSize="lg" mb={6} color="neon.cyan">
+    <Box p={4} bg="brand.900" color="brand.600">
+      <Heading as="h2" size="xl" mb={4} color="brand.500">General Slang</Heading>
+      <Text fontSize="lg" mb={6} color="brand.500">
         Many slang terms are used both online and offline, such as in spoken conversation. The following list includes general shorthand and slang terms that are not specifically used online or in text messaging.
       </Text>
       {loading ? (
@@ -40,17 +40,17 @@ const GeneralSlang = () => {
         <Table variant="simple" colorScheme="teal">
           <Thead>
             <Tr>
-              <Th color="neon.cyan">Slang Term</Th>
-              <Th color="neon.cyan">Meaning</Th>
-              <Th color="neon.cyan">Votes</Th>
+              <Th color="brand.500">Slang Term</Th>
+              <Th color="brand.500">Meaning</Th>
+              <Th color="brand.500">Votes</Th>
             </Tr>
           </Thead>
           <Tbody>
             {terms.map((term, index) => (
               <Tr key={index}>
-                <Td color="white">{term.term}</Td>
-                <Td color="white">{term.meaning}</Td>
-                <Td color="white">{term.votes}</Td>
+                <Td color="brand.600">{term.term}</Td>
+                <Td color="brand.600">{term.meaning}</Td>
+                <Td color="brand.600">{term.votes}</Td>
               </Tr>
             ))}
           </Tbody>

@@ -28,7 +28,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "black",
+        bg: "brand.900",
         color: "brand.600",
       },
       a: {
@@ -36,6 +36,10 @@ const theme = extendTheme({
         _hover: {
           color: "neon.magenta",
         },
+      },
+      "*:focus": {
+        outline: "2px solid",
+        outlineColor: "brand.500",
       },
     },
   },

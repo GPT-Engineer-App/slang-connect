@@ -1,17 +1,25 @@
-import { Box, Flex, Link, Link as ChakraLink } from "@chakra-ui/react";
+import { Box, Flex, Link, Menu, MenuButton, MenuList, MenuItem, IconButton } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
     <Box bg="black" p={4} boxShadow="md" position="fixed" top="0" width="100%" zIndex="1000">
-      <Flex justify="space-around" as={motion.div} initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
+      <Flex justify="space-between" align="center">
         <Link as={NavLink} to="/" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Home</Link>
-        <Link as={NavLink} to="/about" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>About</Link>
-        <Link as={NavLink} to="/contact" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Contact</Link>
-        <Link as={NavLink} to="/terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Terms</Link>
-        <Link as={NavLink} to="/alphabetical-terms" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>Alphabetical Terms</Link>
-        <Link as={NavLink} to="/general-slang" color="cyan.400" fontWeight="bold" whileHover={{ scale: 1.1 }}>General Slang</Link>
+        <Menu>
+          <MenuButton as={IconButton} icon={<FaBars />} variant="outline" color="cyan.400" />
+          <MenuList>
+            <MenuItem as={NavLink} to="/about">About</MenuItem>
+            <MenuItem as={NavLink} to="/contact">Contact</MenuItem>
+            <MenuItem as={NavLink} to="/terms">Terms</MenuItem>
+            <MenuItem as={NavLink} to="/alphabetical-terms">Alphabetical Terms</MenuItem>
+            <MenuItem as={NavLink} to="/general-slang">General Slang</MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
     </Box>
   );
