@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Text, Heading, List, ListItem, Collapse, Button } from '@chakra-ui/react';
+import { Box, Text, Heading, List, ListItem, Collapse } from '@chakra-ui/react';
 
 const terms = [
   { term: "AFK", definition: "Away From Keyboard", example: "I'll be AFK for a few minutes." },
@@ -74,17 +74,17 @@ const Terms = () => {
   };
 
   return (
-    <Box p={4} bg="black">
-      <Heading as="h2" size="xl" mb={4} color="neon.cyan">Slang Terms</Heading>
+    <Box p={4} bg="brand.900">
+      <Heading as="h2" size="xl" mb={4} color="brand.500">Slang Terms</Heading>
       <List spacing={3}>
         {terms.map((item, index) => (
-          <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" bg="gray.800" color="white" boxShadow="lg" border="1px solid" borderColor="gray.600">
+          <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" bg="brand.700" color="brand.600" boxShadow="lg" border="1px solid" borderColor="brand.800">
             <Text fontWeight="bold" onClick={() => handleTermClick(item.term)} cursor="pointer">
               {item.term}
             </Text>
             <Text>{item.definition}</Text>
             <Collapse in={selectedTerm === item.term} animateOpacity>
-              <Box mt={4} p={4} bg="gray.700" borderRadius="md">
+              <Box mt={4} p={4} bg="brand.600" borderRadius="md">
                 <Text fontStyle="italic" color="gray.300">Example: {item.example}</Text>
               </Box>
             </Collapse>

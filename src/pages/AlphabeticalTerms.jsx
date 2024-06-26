@@ -36,8 +36,8 @@ const AlphabeticalTerms = () => {
   };
 
   return (
-    <Box p={4} bg="black" color="white">
-      <Heading as="h2" size="xl" mb={4} color="neon.cyan">Browse Slang Alphabetically</Heading>
+    <Box p={4} bg="brand.900" color="brand.600">
+      <Heading as="h2" size="xl" mb={4} color="brand.500">Browse Slang Alphabetically</Heading>
       <SimpleGrid columns={7} spacing={2} mb={4}>
         {alphabet.map((letter) => (
           <Button key={letter} onClick={() => setSelectedLetter(letter)} colorScheme="teal">
@@ -50,7 +50,7 @@ const AlphabeticalTerms = () => {
       ) : (
         <List spacing={3}>
           {terms.map((term, index) => (
-            <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" bg="gray.800" color="white" boxShadow="lg" border="1px solid" borderColor="gray.600">
+            <ListItem key={index} p={4} borderWidth="1px" borderRadius="md" bg="brand.700" color="brand.600" boxShadow="lg" border="1px solid" borderColor="brand.800">
               <Text fontWeight="bold">{term.word}</Text>
               <Text>{term.definition}</Text>
             </ListItem>
