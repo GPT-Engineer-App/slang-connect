@@ -123,7 +123,7 @@ const Index = () => {
         </Box>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <ModalOverlay />
-          <ModalContent>
+          <ModalContent bg="brand.600">
             <ModalHeader>Submit New Word</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
